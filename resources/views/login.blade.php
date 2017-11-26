@@ -20,9 +20,9 @@
 
     <div class="middle-box text-center loginscreen animated fadeInDown">
         <div>
-            <h3>Welcome to Patra Inovation</h3>
+            <h3>Welcome to patra Tech</h3>
             <p>
-							Inventory,sales,purchase and reporting Application.
+							System Application and Product In Data Processing For Resources optimation <br/>(Base Development Version)
                 <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
             </p>
 						@if(session('session_message'))
