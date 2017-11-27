@@ -15,7 +15,12 @@ class AppRawMaterialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-		 
+		public function __construct(Request $request) 
+		{
+       if ($request->session()->has('session_login')==false) {
+						return Redirect::to('logout')->send();
+			 }
+		}
 		 
     public function index(Request $request)
     {

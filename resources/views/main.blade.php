@@ -73,7 +73,7 @@
                         <ul class="nav nav-second-level collapse" style="height: 0px;">                           
                             <li><a href="{{url('raw_material')}}">Raw Material</a></li>	
 														 <li><a href="{{url('products')}}">Products</a></li>
-														<li><a href="{{url('')}}">Suplier</a></li>
+														<li><a href="{{url('suplier')}}">Suplier</a></li>
 														<li><a href="{{url('')}}">Company</a></li>																
                         </ul>
                     </li>
