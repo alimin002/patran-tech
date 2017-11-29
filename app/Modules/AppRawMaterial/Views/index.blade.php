@@ -88,7 +88,7 @@
 												<td>
 													@if ($values["stock"] == "")
 														<p>
-															Please go to <a href="{{url('refference/stock')}}"><b>menu stock</b></a>&nbsp;to assign number of stock for this raw material! 
+															Please go to <a href="{{url('stock_raw_material')}}"><b>menu stock</b></a>&nbsp;to assign number of stock for this raw material! 
 														</p>
 													@elseif ($values["stock"] == 0)
 														<p style="color:red">

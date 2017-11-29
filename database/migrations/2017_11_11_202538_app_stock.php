@@ -17,6 +17,7 @@ class AppStock extends Migration
             $table->increments('app_stock_id');
 						$table->integer('app_product_id');//kg,piece,pack etc
 						$table->integer('stock');
+						$table->integer('description');
         });
     }
 

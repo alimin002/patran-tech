@@ -3,6 +3,7 @@
 namespace App\Providers;
 use App\app_suplier;
 use App\app_category_raw_material;
+use App\Modules\AppRawMaterial\Models\AppRawMaterial;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -34,6 +35,10 @@ class Lookup extends ServiceProvider
 		}
 		public static function getLookupCategory(){
 			$data=app_category_raw_material::get();
+			return $data;
+		}
+		public static function getLookupRawMaterial(){
+			$data=AppRawMaterial::get();
 			return $data;
 		}
 }
