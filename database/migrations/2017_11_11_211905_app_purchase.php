@@ -15,10 +15,11 @@ class AppPurchase extends Migration
 				//
 				 Schema::create('app_purchase', function (Blueprint $table){
             $table->increments('app_purchase_id');
-						$table->integer('suplier_id');
+						$table->integer('app_suplier_id');
 						$table->integer('sys_user_id');
 						$table->string('purchase_number');
-						$table->date('purchase_date');//no nota,kwitansi,etc	
+						$table->date('purchase_date');
+						$table->text('description');
         });
     }
 

@@ -29,11 +29,13 @@ class AppStockRawMaterialController extends Controller
 				
 				
 				if($request->input("keyword")!= null){
-					$data=AppStockRawMaterial::leftJoin('app_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')
+					$data=AppStockRawMaterial::select('app_raw_material.*','app_stock_raw_material.*',				 		     'app_stock_raw_material.description as stock_description')
+																		->leftJoin('app_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')
 																		->where('app_stock_raw_material.description', 'LIKE','%'.$keyword.'%')
 																		->paginate(3);
 				}else{
-					$data= AppStockRawMaterial::leftJoin('app_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')
+					$data= AppStockRawMaterial::select('app_raw_material.*','app_stock_raw_material.*',				 		     'app_stock_raw_material.description as stock_description')
+																		->leftJoin('app_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')
 																		->paginate(3);
 				}
 				$lookup_raw_material=Lookup::getLookupRawMaterial();
@@ -68,9 +70,12 @@ class AppStockRawMaterialController extends Controller
     public function edit($app_stock_raw_material_id)
     {
         //
-				$data=AppStockRawMaterial::leftJoin('app_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')
+				$data=AppStockRawMaterial::select('app_raw_material.*','app_stock_raw_material.*',				 		     'app_stock_raw_material.description as stock_description')
+																		->leftJoin('app_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')
 																		->where('app_stock_raw_material.app_stock_raw_material_id', '=',$app_stock_raw_material_id)
 																		->first();
+				echo json_encode($data);
+				
     }
 		
     public function update(Request $request)
@@ -81,8 +86,8 @@ class AppStockRawMaterialController extends Controller
 																	"stock"							 	=>$request["stock"],
 																	"description"				 	=>$request["description"]);
 								
-			  $update=AppStockRawMaterial::update($stock_raw_material)
-																		->where("app_stock_raw_material_id","=",$app_stock_raw_material_id);				
+			  $update=AppStockRawMaterial::where("app_stock_raw_material_id","=",$app_stock_raw_material_id)
+																		 ->update($stock_raw_material);																		
 				if($update==1){
 					$message="update data successful";
 				}else{
@@ -97,6 +102,23 @@ class AppStockRawMaterialController extends Controller
 			$lookup_raw_material = Lookup::getLookupRawMaterial();
 			echo json_encode($lookup_raw_material);
 		}	
+		 
+    public function destroy(Request $request)
+    {
+				//
+				 $app_stock_raw_material_id = $request->input("app_stock_raw_material_id");
+				 $delete = AppStockRawMaterial::where('app_stock_raw_material_id', '=',$app_stock_raw_material_id)
+																									->delete();
+				 if($delete ==true){
+					 $message="Delete data successfull";
+				 }else{
+					 $message="Delete data failed";
+				 }
+				 return Redirect::to('stock_raw_material')
+								->with("message",$message);
+				 
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -130,17 +152,7 @@ class AppStockRawMaterialController extends Controller
         //
     }
 
-    
+}  
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-}
+   
