@@ -51,6 +51,12 @@
 		});		
 	}
 	
+	function detail(id){
+		var app_purchase_id=id;
+		var url='{{url("purchase_detail")}}?'+'purchase_id='+app_purchase_id;
+		location.href = url;
+	}
+	
 	function deleteData(id){
 		var app_purchase_id=id;
 		$.ajax({ 

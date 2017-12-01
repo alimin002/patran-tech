@@ -61,15 +61,17 @@
                         </div>
                     </li>
 										<li class="">
-                        <a href="">
+                        <a href="{{url('')}}">
 													<i class="fa fa-th-large"></i> 
 													<span class="nav-label">Dashboards</span> 
-												</a>
-                        <ul class="nav nav-second-level collapse" style="height: 0px;">                           
-                        </ul>
+												</a>                      
                     </li>										
 										<li class="">
-                        <a href="#"><span class="nav-label">Master</span><span class="fa arrow"></span></a>
+                        <a href="#">
+												<i class="fa fa-folder-o" aria-hidden="true"></i>
+												<span class="nav-label">Master</span>
+												<span class="fa arrow"></span>
+												</a>
                         <ul class="nav nav-second-level collapse" style="height: 0px;">                           
                             <li><a href="{{url('raw_material')}}">Raw Material</a></li>	
 														<li><a href="{{url('suplier')}}">Suplier</a></li>
@@ -80,21 +82,30 @@
                         </ul>
                     </li>
 										<li class="">
-                        <a href="#"><span class="nav-label">Transaction</span><span class="fa arrow"></span></a>
+                        <a href="#">
+												<i class="fa fa-money" aria-hidden="true"></i>
+												<span class="nav-label">Transaction</span>
+												<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse" style="height: 0px;">
                             <li><a href="{{url('purchase')}}">Purchse</a></li>
                             <li><a href="{{url('')}}">Sales</a></li>														
                         </ul>
                     </li>
 										<li class="">
-                        <a href="#"><span class="nav-label">Return</span><span class="fa arrow"></span></a>
+                        <a href="#">
+													<i class="fa fa-thumbs-down" aria-hidden="true"></i>
+													<span class="nav-label">Return</span><span class="fa arrow"></span>
+												</a>
                         <ul class="nav nav-second-level collapse" style="height: 0px;">
                             <li><a href="{{url('')}}">Return Purchse</a></li>
                             <li><a href="{{url('')}}">Return Sales</a></li>														
                         </ul>
                     </li>
 										<li class="">
-                        <a href="#"><span class="nav-label">Reports</span><span class="fa arrow"></span></a>
+                        <a href="#">
+												<i class="fa fa-file-text" aria-hidden="true"></i>
+												<span class="nav-label">Reports</span><span class="fa arrow"></span>
+												</a>
                         <ul class="nav nav-second-level collapse" style="height: 0px;">
                             <li><a href="{{url('')}}">Purchse</a></li>
                             <li><a href="{{url('')}}">Sales</a></li>
@@ -104,7 +115,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><span class="nav-label">Refferencess</span><span class="fa arrow"></span></a>
+                        <a href="#">
+												<i class="fa fa-book" aria-hidden="true"></i>
+												<span class="nav-label">Refferencess</span>												
+												<span class="fa arrow"></span>
+												</a>
                         <ul class="nav nav-second-level collapse">
                        
                             <li><a href="{{url('')}}">Category</a></li>
@@ -116,7 +131,11 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><span class="nav-label">Setting</span><span class="fa arrow"></span></a>
+                        <a href="#">
+													<i class="fa fa-wrench" aria-hidden="true"></i>
+													<span class="nav-label">Setting</span>
+													<span class="fa arrow"></span>
+												</a>
                         <ul class="nav nav-second-level collapse">
                        
                             <li><a href="{{url('')}}">Users</a></li>
@@ -663,10 +682,6 @@
 
     <!-- Toastr -->
     <script src="{{url('assets/js/plugins/toastr/toastr.min.js')}}"></script>
-
-
-    <script>
-       
-    </script>
+		
 </body>
 </html>

@@ -28,7 +28,7 @@
  }
   function getRawMaterialByAppRawMaterialId($app_raw_material_id){
 	 $data=AppRawMaterial::
-					select("app_raw_material.name AS raw_name","app_suplier.name AS suplier_name",			"app_raw_material.*","app_suplier.*","app_category_raw_material.*","app_category_raw_material.name as category_name","app_stock_raw_material.stock")
+					select("app_raw_material.name AS raw_name","app_suplier.name AS suplier_name","app_raw_material.*","app_suplier.*","app_category_raw_material.*","app_category_raw_material.name as category_name","app_stock_raw_material.stock")
 												->leftJoin('app_suplier', 'app_raw_material.app_suplier_id', '=', 'app_suplier.app_suplier_id')
 												->leftJoin('app_category_raw_material', 'app_raw_material.app_category_raw_material_id', '=', 'app_category_raw_material.app_category_raw_material_id')
 												->leftJoin('app_stock_raw_material', 'app_raw_material.app_raw_material_id', '=', 'app_stock_raw_material.app_raw_material_id')

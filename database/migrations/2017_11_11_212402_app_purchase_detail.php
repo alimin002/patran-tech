@@ -13,10 +13,12 @@ class AppPurchaseDetail extends Migration
     public function up()
     {
 				//
-				 Schema::create('app_purchase_detail', function (Blueprint $table){
+				Schema::create('app_purchase_detail', function (Blueprint $table){
             $table->increments('app_purchase_detail_id');
 						$table->integer('app_purchase_id');
-						$table->integer('app_product_id');
+						$table->integer('app_raw_material_id');
+						$table->integer('qty');
+						$table->integer('sub_total');
         });
     }
 

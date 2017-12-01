@@ -77,7 +77,7 @@ class AppPurchaseController extends Controller
 			echo json_encode($lookup_suplier);
 		}	
 		
-		 public function update(Request $request)
+		public function update(Request $request)
     {
         //
 				$app_purchase_id = $request->input("app_purchase_id");
@@ -98,7 +98,7 @@ class AppPurchaseController extends Controller
 		
 		 public function destroy(Request $request)
     {
-				//
+				 //
 				 $app_purchase_id = $request->input("app_purchase_id");
 				 $delete = AppPurchase::where('app_purchase_id', '=',$app_purchase_id)
 																									->delete();
