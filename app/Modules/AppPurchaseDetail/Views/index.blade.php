@@ -142,7 +142,7 @@
 												</tbody>												
 										</table>
 										<div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-											{{$data_detail->links()}}
+											{{$data_detail->appends(array("purchase_id"=>$data_header['app_purchase_id']))->links()}}
 										</div>
 								</div>
 						</div>
